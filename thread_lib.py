@@ -28,8 +28,8 @@ def simple_threaded_for(func, args_list):
 def matrix_threaded_for(func, matrix, fn_args_list):
 
     #WARNING: NOT SUITABLE FOR LARGE MATRIX
-    #may spawn large no. of threads, which even though may be simple
-    #make the CPU large amounts of time in context switching
+    #may spawn large no. of threads, which even though may be simple calculations
+    #may cause the CPU to spend large amounts of time in context switching
 
     global timeout
 
