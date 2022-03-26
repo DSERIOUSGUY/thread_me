@@ -25,7 +25,7 @@ def simple_threaded_for(func, args_list):
     return 0
 
 
-def matrix_threaded_for(func, matrix):
+def matrix_threaded_for(func, matrix, fn_args_list):
 
     global timeout
 
@@ -37,7 +37,7 @@ def matrix_threaded_for(func, matrix):
     for i in range(reps_y):
         reps_x = len(matrix[i])
         for j in range(reps_x):
-            args_list = (matrix,i,j)
+            args_list = [matrix] + fn_args_list + [i,j]
             t = threading.Thread(target=func, args=(args_list,))
             t.start()
             threads_array.append(t)
